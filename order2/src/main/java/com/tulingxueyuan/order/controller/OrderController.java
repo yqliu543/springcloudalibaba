@@ -21,7 +21,7 @@ public class OrderController {
         String msg = restTemplate.getForObject("http://localhost:8011/stock/reduct", String.class);
 
 
-        return "Hello World"+msg;
+        return "Hello World---"+msg;
     }
 
 }
