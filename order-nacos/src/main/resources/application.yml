@@ -6,8 +6,8 @@ spring:
     name: order-service
   cloud:
     nacos:
-      server-addr: 127.0.0.1:8848
       discovery:
+        server-addr: localhost:8848
         username: nacos
         password: nacos
         namespace: pulic
