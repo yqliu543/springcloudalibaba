@@ -6,7 +6,6 @@
         <module>stock</module>
         <module>stock-nacos</module>
         <module>order2</module>
-        <module>order2-nacos</module>
         <module>order-nacos</module>
     </modules>
     <parent>
