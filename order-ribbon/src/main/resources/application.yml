@@ -8,3 +8,6 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+stock-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
