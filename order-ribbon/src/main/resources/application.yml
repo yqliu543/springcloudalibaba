@@ -10,4 +10,12 @@ spring:
         server-addr: localhost:8848
 stock-service:
   ribbon:
-    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+#    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+    NFLoadBalancerRuleClassName: com.tulingxueyuan.config.rule.CustomRule
+
+ribbon:
+  eager-load:
+#    配置stock-service服务使用饥饿加载，多个服务逗号隔开
+    clients: stock-service
+#    开启饥饿加载
+    enabled: true
