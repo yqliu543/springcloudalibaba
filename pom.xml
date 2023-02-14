@@ -7,6 +7,7 @@
         <module>stock-nacos</module>
         <module>order2</module>
         <module>order-nacos</module>
+        <module>order-ribbon</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
