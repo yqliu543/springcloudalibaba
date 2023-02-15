@@ -11,6 +11,7 @@
         <module>order-balancer</module>
         <module>order-openfeign</module>
         <module>product-nacos</module>
+        <module>confignacos</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

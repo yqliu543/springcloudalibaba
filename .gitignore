@@ -1,0 +1,5 @@
+/stock-nacos/target/classes/application.yml
+/order2/target/classes/application.yml
+/order-nacos/target/classes/application.yml
+/order-ribbon/target/classes/application.yml
+/stock/target/classes/application.yml
