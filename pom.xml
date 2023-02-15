@@ -8,6 +8,9 @@
         <module>order2</module>
         <module>order-nacos</module>
         <module>order-ribbon</module>
+        <module>order-balancer</module>
+        <module>order-openfeign</module>
+        <module>product-nacos</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

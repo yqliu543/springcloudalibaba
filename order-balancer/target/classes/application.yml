@@ -1,0 +1,13 @@
+server:
+  port: 8031
+
+spring:
+  application:
+    name: order-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    loadbalancer:
+      ribbon:
+        enabled: false
