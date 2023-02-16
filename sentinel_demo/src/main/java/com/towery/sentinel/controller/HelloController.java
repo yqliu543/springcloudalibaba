@@ -7,6 +7,7 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.alibaba.csp.sentinel.slots.block.RuleConstant;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
+import com.towery.sentinel.pojo.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -62,5 +63,11 @@ public class HelloController {
         flowRule.setCount(1);
         rules.add(flowRule);
         FlowRuleManager.loadRules(rules);
+    }
+
+
+    @RequestMapping("/user")
+    public User getuser(String id){
+            return new User("zhangsan");
     }
 }
