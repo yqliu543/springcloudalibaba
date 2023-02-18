@@ -12,6 +12,7 @@
         <module>order-openfeign</module>
         <module>product-nacos</module>
         <module>confignacos</module>
+        <module>order-sentinel</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

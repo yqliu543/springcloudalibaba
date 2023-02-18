@@ -12,6 +12,7 @@ import com.alibaba.csp.sentinel.slots.block.degrade.DegradeRuleManager;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
 import com.towery.sentinel.pojo.User;
+import jdk.nashorn.internal.runtime.regexp.joni.exception.InternalException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +22,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/hello")
-
 public class HelloController {
 
     private static final String RESOURCE_NAME="hello";
@@ -96,19 +96,22 @@ public class HelloController {
     }
 
     @RequestMapping("/user")
-    @SentinelResource(value = USER_RESOURCE_NAME,blockHandler ="blockHandlerForGetUser" )
+    @SentinelResource(value = USER_RESOURCE_NAME,
+            blockHandler ="blockHandlerForGetUser" )
     public User getuser(String id){
             return new User("zhangsan");
     }
-    public User blockHandlerForGetUser(String id){
+    public User blockHandlerForGetUser(String id,BlockException e){
         return new User("流控");
     }
 
-    @RequestMapping("degrade")
-    @SentinelResource(value = DEGRADE_RESOURCE_NAME,entryType = EntryType.IN,blockHandler = "blockHandlerForFb")
-    public User degrade(){
+    @RequestMapping("/degrade")
+    @SentinelResource(value = DEGRADE_RESOURCE_NAME,
+            entryType = EntryType.IN,blockHandler = "blockHandlerForFb")
+    public User degrade  (String id) throws RuntimeException {
         throw new RuntimeException("异常");
     }
+
     public User blockHandlerForFb(String id,BlockException e){
         return new User("熔断降级");
     }
