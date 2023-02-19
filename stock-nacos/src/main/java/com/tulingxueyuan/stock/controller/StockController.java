@@ -20,4 +20,10 @@ public class StockController {
         System.out.println("扣减成功");
         return "扣减成功_"+port;
     }
+    @RequestMapping("/reduct2")
+    public String reduct2(){
+        System.out.println("扣减成功");
+        int a=1/0;
+        return "扣减成功_"+port;
+    }
 }

@@ -8,3 +8,12 @@ spring:
       transport:
         dashboard: 127.0.0.1:8858
       web-context-unify: false
+      datasource:
+        flow-rule: #可以自定义
+          nacos:
+            server-addr: 127.0.0.1:8848
+            username: nacos
+            password: nacos
+            dataId: order-sentinel-flow-rule
+            rule-type: flow
+
